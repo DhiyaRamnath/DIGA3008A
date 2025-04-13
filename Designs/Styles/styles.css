@@ -1,7 +1,19 @@
 .main-header {
-    font-family: 'Times New Roman', Times, serif;
-    display: flex;
-    justify-content: center;
+    font-family: 'Times New Roman', serif;
+    font-size: 1.4rem;
+    color: #876d64;
+    margin: 0;
+    position: relative;
+    text-align: center;
+}
+
+.main-header h1::after {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 3px;
+    background-color: #876d64;
+    margin: 1rem auto 2rem;
 }
 
 .catergory a {

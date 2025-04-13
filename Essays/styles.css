@@ -1,0 +1,132 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    color: #876d64;
+    background-color: #f6ece3;
+    margin: 0;
+    padding: 0;
+}
+
+.main-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    background-color: #f6ece3;
+    gap: 2.5rem;
+}
+
+.main-nav a {
+    padding: 0.75rem 1.25rem;
+    text-decoration: none;
+    color: #876d64;
+    white-space: nowrap;
+    margin: 0;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    position: relative;
+}
+
+.current-page {
+    font-weight: bold;
+    color: #876d64;
+    position: relative;
+    background-color:#c59d9b;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+}
+
+.essays-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+h1 {
+    font-family: 'Times New Roman', serif;
+    font-size: 2.5rem;
+    color: #876d64;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+h1::after {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 3px;
+    background-color: #876d64;
+    margin: 1rem auto 2rem;
+}
+
+.essays-intro {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #876d64;
+    max-width: 600px;
+    margin: 0 auto 3rem;
+}
+
+.essays-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.essay-card {
+    background: #fffaf5;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.essay-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+.essay-card h2 {
+    font-family: 'Times New Roman', serif;
+    font-size: 1.75rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: #876d64;
+}
+
+.essay-excerpt a {
+    color: #f6ece3;
+    line-height: 1.7;
+    margin: 1rem 0 2rem;
+    flex-grow: 1;
+}
+
+.read-more {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: #876d64;
+    color: #f6ece3;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+    align-self: flex-start;
+    margin-top: auto;
+}
+
+.read-more:hover {
+    background-color: #c59d9b;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    background-color:#876d64;
+    color: #f6ece3;
+}
