@@ -29,6 +29,32 @@ body {
     border-radius: 20px;
 }
 
+.current-catergory {
+    font-weight: bold;
+    color: #876d64;
+    position: relative;
+    background-color:#c59d9b;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+}
+
+.catergory-nav{
+     display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 1rem;
+}
+
+.catergory-nav a {
+    text-decoration: none;
+    color:#f6ece3;
+    background-color:#876d64;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+}
+
 .main-nav {
     display: flex;
     justify-content: center;
