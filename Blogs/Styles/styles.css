@@ -36,14 +36,30 @@ body {
     border-radius: 20px;
 }
 
-.nav-logo {
-    display: flex;
-    justify-content: center;
+.current-week {
+    font-weight: bold;
+    color: #876d64;
+    position: relative;
+    background-color:#c59d9b;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
 }
 
-.logo-img {
-    max-height: 100px;
-    width: auto;
+.week-nav{
+     display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 1rem;
+}
+
+.week-nav a {
+    text-decoration: none;
+    color:#f6ece3;
+    background-color:#876d64;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
 }
 
 .main-header {
