@@ -84,6 +84,7 @@ body {
     margin: 1rem auto 2rem;
 }
 
+
 .writings-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);

@@ -5,6 +5,7 @@
     margin: 0;
     position: relative;
     text-align: center;
+   
 }
 
 .main-header h1::after {
@@ -28,7 +29,7 @@ body {
     color: #876d64;
     background-color: #f6ece3;
     margin: 0;
-    padding: 0;
+    padding: 2rem;
 }
 
 .current-page {
