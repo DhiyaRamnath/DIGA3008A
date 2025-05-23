@@ -1,97 +1,91 @@
 document.addEventListener('DOMContentLoaded', function() {
-
-    const designsGrid = document.querySelector('.designs-grid');
-
-    const designCards = Array.from(document.querySelectorAll('.design-card'));
-    
-    if (designCards.length === 0) return;
-    
-    const carousel = document.createElement('div');
-    carousel.className = 'carousel-container';
-
-    const track = document.createElement('div');
-    track.className = 'carousel-track';
-
-    const prevButton = document.createElement('button');
-    prevButton.className = 'carousel-button carousel-button--prev';
-    prevButton.innerHTML = '&lt;';
-    
-    const nextButton = document.createElement('button');
-    nextButton.className = 'carousel-button carousel-button--next';
-    nextButton.innerHTML = '&gt;';
-    
-    const dotsContainer = document.createElement('div');
-    dotsContainer.className = 'carousel-dots';
-   
-    designCards.forEach((card, index) => {
-        const slide = document.createElement('div');
-        slide.className = 'carousel-slide';
-        slide.appendChild(card.cloneNode(true));
-        track.appendChild(slide);
-
-        const dot = document.createElement('button');
-        dot.className = 'carousel-dot';
-        if (index === 0) dot.classList.add('active');
-        dot.dataset.index = index;
-        dotsContainer.appendChild(dot);
-    });
-    
-    carousel.appendChild(prevButton);
-    carousel.appendChild(track);
-    carousel.appendChild(nextButton);
-    carousel.appendChild(dotsContainer);
-    
-    designsGrid.parentNode.replaceChild(carousel, designsGrid);
-    
-    const slides = Array.from(document.querySelectorAll('.carousel-slide'));
-    const dots = Array.from(document.querySelectorAll('.carousel-dot'));
-    const slideCount = slides.length;
+    const gallery = document.querySelector('.wireframe-gallery');
+    const items = document.querySelectorAll('.wireframe-item');
+    const itemCount = items.length;
     let currentIndex = 0;
     
-    prevButton.addEventListener('click', goToPrevSlide);
-    nextButton.addEventListener('click', goToNextSlide);
+    // Set up carousel structure
+    function initCarousel() {
+        // Create navigation buttons
+        const prevButton = document.createElement('button');
+        prevButton.className = 'carousel-button prev';
+        prevButton.innerHTML = '&lt;';
+        prevButton.addEventListener('click', showPrevItem);
+        
+        const nextButton = document.createElement('button');
+        nextButton.className = 'carousel-button next';
+        nextButton.innerHTML = '&gt;';
+        nextButton.addEventListener('click', showNextItem);
+        
+        // Create indicators
+        const indicators = document.createElement('div');
+        indicators.className = 'carousel-indicators';
+        
+        for (let i = 0; i < itemCount; i++) {
+            const indicator = document.createElement('button');
+            indicator.className = 'indicator';
+            if (i === 0) indicator.classList.add('active');
+            indicator.addEventListener('click', () => showItem(i));
+            indicators.appendChild(indicator);
+        }
+        
+        // Insert controls
+        gallery.insertAdjacentElement('afterend', indicators);
+        gallery.insertAdjacentElement('beforebegin', prevButton);
+        gallery.insertAdjacentElement('beforebegin', nextButton);
+        
+        // Set initial state
+        updateCarousel();
+    }
     
-    dots.forEach(dot => {
-        dot.addEventListener('click', function() {
-            const dotIndex = parseInt(this.dataset.index);
-            goToSlide(dotIndex);
-        });
-    });
-
-    function goToSlide(index) {
+    // Show previous item
+    function showPrevItem() {
+        currentIndex = (currentIndex - 1 + itemCount) % itemCount;
+        updateCarousel();
+    }
+    
+    // Show next item
+    function showNextItem() {
+        currentIndex = (currentIndex + 1) % itemCount;
+        updateCarousel();
+    }
+    
+    // Show specific item
+    function showItem(index) {
         currentIndex = index;
+        updateCarousel();
+    }
+    
+    // Update carousel display
+    function updateCarousel() {
+        // Hide all items
+        items.forEach(item => {
+            item.style.display = 'none';
+        });
         
-        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+        // Show current item
+        items[currentIndex].style.display = 'block';
         
-        dots.forEach(dot => dot.classList.remove('active'));
-        dots[currentIndex].classList.add('active');
+        // Update indicators
+        const indicators = document.querySelectorAll('.indicator');
+        indicators.forEach((indicator, index) => {
+            if (index === currentIndex) {
+                indicator.classList.add('active');
+            } else {
+                indicator.classList.remove('active');
+            }
+        });
     }
     
-    function goToPrevSlide() {
-        if (currentIndex === 0) {
-            goToSlide(slideCount - 1);
-        } else {
-            goToSlide(currentIndex - 1);
+    // Initialize the carousel
+    initCarousel();
+    
+    // Optional: Add keyboard navigation
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'ArrowLeft') {
+            showPrevItem();
+        } else if (e.key === 'ArrowRight') {
+            showNextItem();
         }
-    }
-    
-    function goToNextSlide() {
-        if (currentIndex === slideCount - 1) {
-            goToSlide(0);
-        } else {
-            goToSlide(currentIndex + 1);
-        }
-    }
-    
-    // Auto-advance carousel (optional)
-    let autoSlideInterval = setInterval(goToNextSlide, 5000);
-    
-    // Pause auto-advance on hover
-    carousel.addEventListener('mouseenter', () => {
-        clearInterval(autoSlideInterval);
-    });
-    
-    carousel.addEventListener('mouseleave', () => {
-        autoSlideInterval = setInterval(goToNextSlide, 5000);
     });
 });
