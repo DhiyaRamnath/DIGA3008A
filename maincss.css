@@ -78,3 +78,39 @@ footer p {
     font-size: 0.9rem;
     line-height: 1.2;
 }
+
+#back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: #c59d9b;
+    color: #f6ece3;
+    border: none;
+    cursor: pointer;
+    font-size: 2rem;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+    z-index: 99;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+#back-to-top:hover {
+    opacity: 1;
+    transform: translateY(-5px) scale(1.05);
+    background-color: #876d64;
+}
+
+@media (max-width: 768px) {
+    #back-to-top {
+        width: 40px;
+        height: 40px;
+        bottom: 20px;
+        right: 20px;
+    }
+}
