@@ -178,66 +178,106 @@ footer p {
     line-height: 1.4;
 }
 
-/* Carousel Styles */
 .carousel-button {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
+    background: #876d64;
+    color: #c59d9b;
     border: none;
-    padding: 10px 15px;
-    font-size: 18px;
+    padding: 20px 25px;
+    font-size: 28px;
     cursor: pointer;
     border-radius: 50%;
     z-index: 10;
-    transition: background 0.3s;
+    transition: all 0.3s ease;
+    opacity: 0.9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
 }
 
 .carousel-button:hover {
-    background: rgba(0, 0, 0, 0.8);
+    background: #876d64;
+    transform: translateY(-50%) scale(1.1);
 }
 
 .carousel-button.prev {
-    left: 20px;
+    left: 50%;
+    margin-left: -500px;
 }
 
 .carousel-button.next {
-    right: 20px;
+    right: 50%;
+    margin-right: -500px;
 }
 
 .carousel-indicators {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
-    gap: 10px;
+    margin: 25px 0;
+    gap: 12px;
 }
 
 .carousel-indicators .indicator {
-    width: 12px;
-    height: 12px;
+    width: 14px;
+    height: 14px;
     border-radius: 50%;
-    background: #ccc;
+    background: #c59d9b;
     border: none;
     cursor: pointer;
     padding: 0;
+    transition: background 0.3s;
 }
 
 .carousel-indicators .indicator.active {
-    background: #333;
+    background: #876d64; 
+    transform: scale(1.2);
 }
 
-.wireframe-gallery {
+.wireframe-gallery,
+.styleguide-gallery {
     position: relative;
-    min-height: 500px; 
+    min-height: 600px;
+    margin: 0 auto;
+    max-width: 1000px; 
 }
 
-.wireframe-item {
+.wireframe-item,
+.styleguide-item {
     display: none;
     text-align: center;
-    padding: 20px;
+    padding: 15px;
 }
 
-.wireframe-item:first-child {
+.wireframe-item:first-child,
+.styleguide-item:first-child {
     display: block;
+}
+
+.wireframe-image,
+.styleguide-image {
+    max-width: 250%; 
+    height: auto;
+    max-height: 500px; 
+    margin: 0 auto 15px;
+    display: block;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.wireframe-item h2,
+.styleguide-item h2 {
+    margin-bottom: 15px;
+    color: #876d64;
+}
+
+.wireframe-description,
+.styleguide-description {
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+    color: #555;
 }
