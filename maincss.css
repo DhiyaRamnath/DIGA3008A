@@ -32,6 +32,7 @@
     z-index: -1;
     width: 300px; 
     pointer-events: none; 
+    will-change: transform;
 }
 .left-branch {
     top: 0;
