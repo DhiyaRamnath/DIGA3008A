@@ -131,3 +131,21 @@ main {
 .read-more:hover {
     background-color: #c59d9b;
 }
+
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 6px;
+    background: linear-gradient(90deg, #876d64, #c59d9b, #876d64);background-size: 200% 100%;animation: progressGradient 2s linear infinite;
+    z-index: 1000;
+    transition: width 0.1s ease-out;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-radius: 3px;
+}
+
+@keyframes progressGradient {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
