@@ -33,6 +33,8 @@
     width: 300px; 
     pointer-events: none; 
     will-change: transform;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
 }
 .left-branch {
     top: 0;
