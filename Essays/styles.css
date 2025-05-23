@@ -1,3 +1,7 @@
+html {
+    height: 100%;
+}
+
 body {
     font-family: 'Montserrat', sans-serif;
     line-height: 1.6;
@@ -5,6 +9,15 @@ body {
     background-color: #f6ece3;
     margin: 0;
     padding: 0;
+    min-height: 100vh;
+    position: relative; 
+}
+
+main {
+    flex: 1 0 auto;
+    position: relative; 
+    z-index: 1; 
+    padding-bottom: 4rem; 
 }
 
 .main-nav {
@@ -40,6 +53,7 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 2rem;
+    padding-bottom: 5rem;
 }
 
 h1 {
@@ -68,11 +82,18 @@ h1::after {
     margin: 0 auto 3rem;
 }
 
+.essays-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
 .essays-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 2rem;
     margin-top: 2rem;
+    margin-bottom: 2rem;
 }
 
 .essay-card {
@@ -148,24 +169,3 @@ h1::after {
     transition: opacity 0.3s ease;
 }
 
-footer {
-width: 100%;
-    background-color: #876d64;
-    color: #f6ece3;
-    text-align: center;
-    padding: 1.5rem 0;
-    margin-top: 3rem; 
-    box-sizing: border-box;
-    position: relative;
-    z-index: 10;
-}
-
-.footer-logo {
-    margin-bottom: 1rem;
-}
-
-footer p {
-    margin: 0.5rem 0;
-    font-size: 0.9rem;
-    line-height: 1.4;
-}

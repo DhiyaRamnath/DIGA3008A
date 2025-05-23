@@ -4,7 +4,11 @@ body {
     color: #876d64;
     background-color: #f6ece3;
     margin: 0;
-    padding: 10rem;
+    padding: 0rem;
+}
+
+main {
+    flex: 1;
 }
 
 .current-page {
