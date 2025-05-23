@@ -7,25 +7,6 @@ body {
     padding: 10rem;
 }
 
-.main-nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1.5rem 2rem;
-    gap: 2.5rem;
-}
-
-.main-nav a {
-    padding: 0.75rem 1.25rem;
-    text-decoration: none;
-    color: #876d64;
-    white-space: nowrap;
-    margin: 0;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-    position: relative;
-}
-
 .current-page {
     font-weight: bold;
     color: #876d64;
@@ -144,51 +125,4 @@ body {
 
 .read-more:hover {
     background-color: #c59d9b;
-}
-
-.decorative-branch {
-    position: fixed;
-    z-index: -1;
-    width: 300px; 
-    pointer-events: none; 
-}
-.left-branch {
-    top: 0;
-    left: 0;
-    transform: translateX(-25%) rotate(5deg);
-}
-
-.right-branch {
-    top: 0;
-    right: 0;
-    transform: translateX(25%) rotate(-5deg);
-}
-
-.decorative-branch img {
-    width: 100%;
-    height: auto;
-    opacity: 0.7;
-    transition: opacity 0.3s ease;
-}
-
-footer {
-width: 100%;
-    background-color: #876d64;
-    color: #f6ece3;
-    text-align: center;
-    padding: 1.5rem 0;
-    margin-top: 3rem; 
-    box-sizing: border-box;
-    position: relative;
-    z-index: 10;
-}
-
-.footer-logo {
-    margin-bottom: 1rem;
-}
-
-footer p {
-    margin: 0.5rem 0;
-    font-size: 0.9rem;
-    line-height: 1.4;
 }
