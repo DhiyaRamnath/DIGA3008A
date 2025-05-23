@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const rotation = xPercentage * 5 * xMultiplier;
                 const translateY = yPercentage * 20 * yMultiplier;
                 
-                branch.style.transform = `
+                branch.style.transform = `'transform 1.5s ease-out';
                     ${index === 0 ? 'translateX(-25%)' : 'translateX(25%)'}
                     rotate(${5 + rotation}deg)
                     translateY(${translateY}px)
