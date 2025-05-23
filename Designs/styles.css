@@ -8,6 +8,16 @@
    
 }
 
+.wireframe-header {
+    font-family: 'Times New Roman', serif;
+    font-size: 1.5rem;
+    color: #876d64;
+    margin: 0;
+    position: relative;
+    text-align: center;
+   
+}
+
 .main-header h1::after {
     content: "";
     display: block;
