@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../Blogs/styles.css">
     <link rel="stylesheet" href="../maincss.css">
     <script src="../mainjs.js"></script>
+    <script src="../Blogs/lightbox.js"></script>
 </head>
 <body>
     <header>
@@ -147,11 +148,13 @@
 
             <section>
                 <h3>Information Structure:</h3>
+                <div class="wireframe-grid">
                 <img src="../Blogs/Images/InformationStructure.png" alt="An image of my information structure in mindmap form" height="500">
                 
                 <h3>User Flow Flowchart:</h3>
                 <img src="../Blogs/Images/UserFlowFlowchart.png" alt="An image of my User flow in a flowchart" height="500">
-                
+                </div>
+
                 <h3>Final Chosen Wireframes:</h3>
                 <div class="wireframe-grid">
                     <img src="../Blogs/Images/FinalIterationHomepage.png" alt="My first final concept of a children's novel inspired homepage" height="300">
@@ -181,19 +184,23 @@
                 <p>I wanted to go for a pastel color palette on light blues, pinks and greens with a hint of browns and greys. In terms of structuring the pages (mimicking line breaks in fantasy books), backgrounds to illustrations (ovals/circles) and other illustrations will make use of this color palette. The texts around the pages will be a darkish grey, neutral tone, just so its light to the eye unlike the harshness of black. The pastel blue is a cool tone and its meant to evoke calmness and professionalism with sectioning parts of my website. The pastel green is also a cool tone with I feel represents growth and creativity which is ideal for the engagement I want from my users. The pastel pink is a warm tone is to add warmth and friendliness to create a welcoming atmosphere for my users. The brown hints is to complement the softer pastels for contrast. These pastel colors don't compete with each other since there is a variety of warm and cool tones which enhances clarity</p>
                 
                 <h4>Color Palette:</h4>
+                <div class="wireframe-grid">
                 <img src="../Blogs/Images/ColorPalette.png" alt="An image of my color palette including pastel blue, green, pink, brown and a light grey" height="500">
-                
+                </div>
+
                 <h4>Compositional Hierarchy:</h4>
                 <p>This website will make use of 2 fonts:</p>
                 <p>1 Serif - similar to New Times Roman: This font is generally used for headings in newspapers or books which generally grab attention which will fit the format of this website. This to contribute to the traditional and literary feel to my website. (Mainly for headings)</p>
                 <p>1 San-serif - Montserrat: This font is minimalistic which makes reading a lot more easier, which is beneficial considering the demographic of users that would view my website. This is to contrast the traditional headings in providing a more modern and minimal contrast to ensure readability. (Mainly for body text)</p>
                 
                 <h5>Montserrat Font:</h5>
+                <div class="wireframe-grid">
                 <img src="../Blogs/Images/MontserratFont.png" alt="An image of the font names monserrat" height="200">
                 
                 <h5>Times New Roman Font:</h5>
                 <img src="../Blogs/Images/TimesNewRomanBoldFont.png" alt="An image of the font names new times roman" height="200">
-                
+                </div>
+
                 <p>In sectioning parts of the website, I make use of line breaks of a fantasy book aesthetic to mimic the traditional layout. This is to help guide the reader's eyes naturally. The shapes used are all rounded. These organic shapes help in creating a fluid composition unlike harsh angles that could disrupt the reading flow. Important content like headings and links are clearly larger than the smaller, detailed texts. This also includes other elements like images relating to the important content are aligned to the opposite side of the information to give the user's eyes a place to rest and to also support the information rather than overpowering it. All test will be aligned left to follow natural reading patterns. The CTA is placed at the bottom in the footer which is typically where CTAs are placed. The format of this website makes use of asymmetrical balance with floating illustrations and rounded backgrounds to those illustrations to create dynamism.</p>
             </section>
 
@@ -230,6 +237,14 @@
     </main>
 
             <button id="back-to-top" aria-label="Back to top">↑</button>
+
+            <div id="lightbox" class="lightbox">
+                <span class="close">&times;</span>
+                <img class="lightbox-content" id="lightbox-image">
+                <a class="prev">&#10094;</a>
+                <a class="next">&#10096;</a>
+                <div class="caption"></div>
+            </div>
 
    <footer>
             <div class="footer-logo">

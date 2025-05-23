@@ -1,61 +1,98 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Get all gallery images
-    const images = document.querySelectorAll('img[src*="Wireframe"]');
-    const lightbox = document.getElementById('lightbox');
+    const imageGroups = {
+        wireframes: {
+            selector: 'img[src*="Wireframe"], .wireframe-grid img',
+            name: 'Wireframe'
+        },
+        inspiration: {
+            selector: '.inspiration-links img, .inspiration-item img',
+            name: 'Inspiration'
+        }
+    };
+
+    const lightbox = document.getElementById('lightbox') || createLightbox();
     const lightboxImg = document.getElementById('lightbox-image');
     const captionText = document.querySelector('.caption');
     const closeBtn = document.querySelector('.close');
     const prevBtn = document.querySelector('.prev');
     const nextBtn = document.querySelector('.next');
     
+    let currentImages = [];
     let currentIndex = 0;
-    
-    // Open lightbox
-    function openLightbox(index) {
+
+    function createLightbox() {
+        const lb = document.createElement('div');
+        lb.id = 'lightbox';
+        lb.className = 'lightbox';
+        lb.innerHTML = `
+            <span class="close">&times;</span>
+            <img class="lightbox-content" id="lightbox-image">
+            <a class="prev">&#10094;</a>
+            <a class="next">&#10096;</a>
+            <div class="caption"></div>
+            <div class="image-group-name"></div>
+        `;
+        document.body.appendChild(lb);
+        return lb;
+    }
+
+    function initImageGroups() {
+        for (const group in imageGroups) {
+            const images = document.querySelectorAll(imageGroups[group].selector);
+            images.forEach((img, index) => {
+                img.style.cursor = 'pointer';
+                img.dataset.group = group;
+                img.dataset.index = index;
+                
+                img.addEventListener('click', function() {
+                    openLightbox(this.dataset.group, parseInt(this.dataset.index));
+                });
+            });
+        }
+    }
+
+    function openLightbox(group, index) {
+        currentImages = Array.from(document.querySelectorAll(imageGroups[group].selector));
         currentIndex = index;
         lightbox.style.display = 'block';
-        lightboxImg.src = images[currentIndex].src;
-        captionText.textContent = images[currentIndex].alt || '';
-        document.body.style.overflow = 'hidden'; // Prevent scrolling
+        updateLightboxImage();
+        document.body.style.overflow = 'hidden';
+      
+        const groupNameElement = document.querySelector('.image-group-name');
+        if (groupNameElement) {
+            groupNameElement.textContent = imageGroups[group].name;
+        }
     }
-    
-    // Close lightbox
+
+    function updateLightboxImage() {
+        lightboxImg.src = currentImages[currentIndex].src;
+        captionText.textContent = currentImages[currentIndex].alt || '';
+        lightboxImg.classList.add('fade');
+        setTimeout(() => lightboxImg.classList.remove('fade'), 300);
+    }
+
     function closeLightbox() {
         lightbox.style.display = 'none';
         document.body.style.overflow = 'auto';
     }
-    
-    // Navigate to next image
+
     function nextImage() {
-        currentIndex = (currentIndex + 1) % images.length;
-        lightboxImg.src = images[currentIndex].src;
-        captionText.textContent = images[currentIndex].alt || '';
-        lightboxImg.classList.add('fade');
-        setTimeout(() => lightboxImg.classList.remove('fade'), 300);
+        currentIndex = (currentIndex + 1) % currentImages.length;
+        updateLightboxImage();
     }
-    
-    // Navigate to previous image
+
     function prevImage() {
-        currentIndex = (currentIndex - 1 + images.length) % images.length;
-        lightboxImg.src = images[currentIndex].src;
-        captionText.textContent = images[currentIndex].alt || '';
-        lightboxImg.classList.add('fade');
-        setTimeout(() => lightboxImg.classList.remove('fade'), 300);
+        currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
+        updateLightboxImage();
     }
-    
-    // Add click events to all gallery images
-    images.forEach((img, index) => {
-        img.style.cursor = 'pointer';
-        img.addEventListener('click', () => openLightbox(index));
-    });
-    
-    // Close events
+
+    initImageGroups();
+
     closeBtn.addEventListener('click', closeLightbox);
     lightbox.addEventListener('click', (e) => {
         if (e.target === lightbox) closeLightbox();
     });
-    
-    // Navigation events
+
     nextBtn.addEventListener('click', (e) => {
         e.stopPropagation();
         nextImage();
@@ -65,8 +102,7 @@ document.addEventListener('DOMContentLoaded', function() {
         e.stopPropagation();
         prevImage();
     });
-    
-    // Keyboard navigation
+
     document.addEventListener('keydown', (e) => {
         if (lightbox.style.display === 'block') {
             switch(e.key) {
@@ -82,17 +118,18 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
     });
-    
-    // Optional: Add fade transition class
-    const style = document.createElement('style');
-    style.textContent = `
-        .fade {
-            animation: fade 0.3s;
-        }
-        @keyframes fade {
-            from {opacity: 0.5;}
-            to {opacity: 1;}
-        }
-    `;
-    document.head.appendChild(style);
+
+    let isZoomed = false;
+    lightboxImg.addEventListener('click', function(e) {
+        e.stopPropagation();
+        isZoomed = !isZoomed;
+        this.style.transform = isZoomed ? 'scale(2)' : 'scale(1)';
+        this.style.cursor = isZoomed ? 'zoom-out' : 'zoom-in';
+        this.style.transition = 'transform 0.3s ease';
+    });
+
+    lightboxImg.addEventListener('load', function() {
+        this.style.transform = 'scale(1)';
+        isZoomed = false;
+    });
 });

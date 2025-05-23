@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="../Blogs/styles.css">
     <link rel="stylesheet" href="../maincss.css">
     <script src="../mainjs.js"></script>
-    <script src="../Designs/carousel.js"></script>
+    <script src="../Blogs/lightbox.js"></script>
 
 </head>
 <body>
@@ -124,6 +124,14 @@
 
         <button id="back-to-top" aria-label="Back to top">↑</button>
         
+        <div id="lightbox" class="lightbox">
+            <span class="close">&times;</span>
+            <img class="lightbox-content" id="lightbox-image">
+            <a class="prev">&#10094;</a>
+            <a class="next">&#10096;</a>
+            <div class="caption"></div>
+        </div>
+
     <footer>
             <div class="footer-logo">
                 <img src="../Blogs/Images/FooterLogo.png" alt="Didi Logo" class="logo-img" height= "100">
