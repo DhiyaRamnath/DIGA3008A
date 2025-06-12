@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../Portfolio/styles/styles.css">
     <link rel="stylesheet" href="../maincss.css">
     <script src="../mainjs.js"></script>
+    <script src="scripts/mini-carousel.js"></script>
 </head>
 <body>
     <header>
@@ -75,7 +76,47 @@
                 </div>
             </article>
 
-            
+            <article class="writing-card">
+                <div class="writing-content">
+                    <h3 class="writing-title">Japanese Tea Garden Portfolio</h3>
+                    <p class="writing-preview">A visual exploration of traditional Japanese tea gardens, showcasing layout, symbolism, and minimalist design philosophy in an illustrated portfolio.</p>
+                
+                <div class="writing-thumbnail">
+                    <img src="Images/zen-front.png" alt="Thumbnail for Japanese Tea Garden Portfolio" class="writing-thumb-img">
+                </div>
+
+                    <a href="Stories/japanese-tea-garden-portfolio.pdf" target="_blank" rel="noopener noreferrer" class="read-more" download="japanese-tea-garden-portfolio" aria-label="Download Japanese Tea Garden Portfolio">Download Portfolio</a>
+                </div>
+            </article>
+
+            <section class="writing-card">
+                <div class="writing-content">
+                    <h3 class="writing-title">Invite Collection</h3>
+                        <p class="writing-preview"> A curated gallery of miscellaneous invites designed for birthdays, weddings, and special events. Click to view.</p>
+
+                <div class="writing-thumbnail">
+                    <a href="#invite-carousel" class="open-carousel">
+                        <img src="Images/spiderman-welcome-board.png" alt="Thumbnail for Invite Collection" class="writing-thumb-img">
+                    </a>
+                </div>
+            </div>
+        </section>
+                <div id="invite-carousel" class="carousel-overlay">
+                <span class="close-carousel">&times;</span>
+                <div class="carousel-images">
+                    <img src="Images/aisha-bday.png" class="carousel-image" alt="Invite 1">
+                    <img src="Images/church-flyer.png" class="carousel-image" alt="Invite 2">
+                    <img src="Images/jessica's-50th-birthday-board.png" class="carousel-image" alt="Invite 3">
+                    <img src="Images/mike-birthday-invite.png" class="carousel-image" alt="Invite 3">
+                    <img src="Images/spiderman-welcome-board.png" class="carousel-image" alt="Invite 3">
+                    <img src="Images/twins-invite.png" class="carousel-image" alt="Invite 3">
+                    <img src="Images/mike-birthday-invite.png" class="carousel-image" alt="Invite 3">
+                </div>
+                    <div class="carousel-nav">
+                        <button class="prev">&#10094;</button>
+                        <button class="next">&#10095;</button>
+                    </div>
+                </div>
         </section>
     </main>
 
