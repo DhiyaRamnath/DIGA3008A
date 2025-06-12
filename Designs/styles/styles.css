@@ -48,6 +48,14 @@ main {
     padding: 2rem; 
 }
 
+.nav-logo img {
+    transition: transform 0.3s ease;
+}
+
+.nav-logo:hover img {
+    transform: scale(1.05);
+}
+
 .current-page {
     font-weight: bold;
     color: #876d64;
@@ -139,8 +147,8 @@ main {
 }
 
 .design-title {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.85rem;
+    font-family: 'Times New Roman', serif;
+    font-size: 20px;
     margin: 0.5rem 0;
     color:  #f6ece3;
     text-align: left;
