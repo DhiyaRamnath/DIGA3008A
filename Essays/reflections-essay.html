@@ -20,13 +20,21 @@
             <a href="../Designs/designs.html">Designs</a>
 
             <div class="nav-logo">
-                <img src="../Blogs/Images/navigation-main-logo.png" alt="Main Logo" class="logo-img" height="200">
+                <img src="../Blogs/Images/navigation-main-logo.png" alt="Main Logo" class="logo-img">
             </div>
 
             <a href="../Essays/essay.html">Essays</a>
             <a href="../Portfolio/portfolio.html">Portfolio</a>
             <a href="../Profile/about.html">Profile</a>
         </nav>
+
+        <div class="decorative-branch left-branch">
+        <img src="../Profile/Images/rose-leaves.png" alt="Decorative leaves branch">
+    </div>
+
+    <div class="decorative-branch right-branch">
+        <img src="../Profile/Images/cherryb-branch.png" alt="Decorative flower branch">
+    </div>
 
         <nav class="essay-nav">
             <a href="design-indaba-essay.html">UI & UX Essay</a>
@@ -41,39 +49,34 @@
                 <h1 class="p-name">Ethics, UI, UX, and Interaction</h1>
                 <h2>Design Indaba Essay</h2>
                 <div class="post-meta">
-                    <time class="dt-published" datetime="2024-02-15">February 15, 2024</time>
+                    <time class="dt-published" datetime="2024-02-15">June 13, 2025</time>
                     <span class="p-author">Dhiya Ramnath</span>
                 </div>
             </header>
 
-            <div class="e-content">
-                <section class="essay-section">
-                    <p></p>
-                </section>
-
                 <section class="essay-section">
                     <h3>Folder Structure</h3>
-                    <p></p>
+                    <p>My folder structure follows a hierarchical information architecture, which mirrors the content organization of my website. Different sections of the site are stored in clearly labeled directories like /Blogs, /Portfolio, and /Profile. This structure effectively separates content by dividing the content, the way it behaves and its presentation into distinct layers. HTML files, such as /Blogs/blog1.html, are used solely for content and structure. This makes the HTML more readable and focused on semantic layout. CSS is contained in a /styles folder for each page ( /Styles/styles.css) and handles the site's presentation, including layout, colors, and typography. The JavaScript is stored in the /scripts folder (scripts/carousel.js) which was used for the interactivity part of my website including scrolling through image carousels or interactive branches. This approach demonstrates a clear separation between the data layer (HTML), the presentation layer (CSS), and the logic layer (JavaScript). It makes the site easier to maintain and debug and also improves readability and collaboration. Each section of the site is self-contained so that new content or features can be added without disrupting existing files. </p>
                 </section>
 
                 <section class="essay-section">
                     <h3>Semantic Markup</h3>
-                    <p></p>
+                    <p>In my HTML, I make use of tags like article, section, and header to prioritize semantic markup. This provides a clearer structure and more context to browsers, screen readers, and search engines. I structure headings by using a clear hierarchy tags like h1 for the main title and h2 to h3 for subheadings. This helps the flow and importance of information especially in my large content sections like my blog posts and essay posts. This ensures that both my users and the machines can interpret the content in each page intuitively. I also incorporate ARIA labels such as aria-label="Read more about Week 1 Blog" to provide more descriptive context for users that require assistance. I also use the time element with the datetime attribute for published dates would help browsers and tools understand and format temporal data more accurately. </p>
                 </section>
 
                 <section class="essay-section">
                     <h3>Metadata</h3>
-                    <p></p>
+                    <p>I have used descriptive meta tags such as author, description, and keywords on my essay page. These assist in communicating the purpose and ownership of the page to the user and the machine. The description tag provides a brief summary of the page content, which search engines may display in search results which improves the click-through rates and SEO performance. The author tag credits the content creator, which is important for establishing credibility, especially in academic or portfolio work. The keywords tag provides additional context that can assist in classifying the content.</p>
                 </section>
 
                 <section class="essay-section">
                     <h3>CSS</h3>
-                    <p></p>
+                    <p>My CSS makes use of Block Element Modifier naming conventions and logical file organization. I separated styles into a main stylesheet (maincss.css) for shared CSS and components like typography, colors, grid layouts. Stylesheets specific to each page were created to avoid overloading a single file (blog.css, profile.css). This modular approach ensures that changes to one page’s design do not unintentionally affect others. I implemented responsive design so that mobile-media queries adapt to my typography, grid structures, and navigation. I avoided inline styles in html entirely.</p>
                 </section>
 
                 <section class="essay-section">
                     <h3>Javascript</h3>
-                    <p></p>
+                    <p>The Javascript in my website enhances my user experience through event-driven interactions. I make use of a "back to top” button, a lightbox image viewer and an image carousel and interactive branches in my website. Event listeners (e.g., click, scroll) are delegated where placed (e.g., using event.target.closest() for dynamic elements) to better the website's performance. I also included an instagram feed API via Elfsight's widget in my profile page. I also make use of the defer attribute to prevent render blocking.</p>
                 </section>
             </div>
         </article>

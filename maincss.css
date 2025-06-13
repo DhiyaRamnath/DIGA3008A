@@ -19,6 +19,7 @@
 
 .nav-logo img {
     transition: transform 0.3s ease;
+    height: 250px;
 }
 
 .nav-logo:hover img {
@@ -57,7 +58,7 @@
 }
 
 .decorative-branch img {
-    width: 100%;
+    width: 150%;
     height: auto;
     opacity: 0.7;
     transition: opacity 0.3s ease;
